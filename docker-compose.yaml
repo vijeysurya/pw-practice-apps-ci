@@ -1,0 +1,11 @@
+version: '1.27.0'
+services:
+  playwright-test:
+    image: pw-practices8-pageobject-app
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: npx playwright test usePageObject.spec.js --project=chromium
+    volumes:
+      - ./playwright-report/:/appyyy/playwright-report
+      - ./test-results/:/appyyy/test-results
